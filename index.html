@@ -25,13 +25,6 @@
     .carousel-item{
       height: 300px;
     }
-    .carousel-item img{
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 330px;
-      width: 1130px;
-    }
     #statewise thead{
       color:white;
     }
@@ -125,27 +118,34 @@
             <li data-target="#demo" data-slide-to="3"></li>
           </ul>
           <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="carousel-caption">
-                <h1>C O V I D - 1 9</h1>
+            <div class="carousel-item active" style="background-color: #2F4F4F;">
+              <div class="carousel-caption m-5">
+                <h5><i><strong>"Ultimately, the greatest lesson that COVID-19 can teach humanity is that we are all in this together."</strong></i></h5>
               </div>   
             </div>
-            <div class="carousel-item">
+            <div class="carousel-item" style="background-color: green;">
               <div class="carousel-caption mb-5">
                <h5>ORANGE DOTS<span> <i>is a Information Site for Professional Students.We are Started this(ORANGE DOTS) for Improve our Development skills as well as to give  information in a Easy-Way.</i></span></h5>
               </div>   
             </div>
-            <div class="carousel-item">
+            <div class="carousel-item" style="background-color: orange;">
               <div class="carousel-caption mb-5">
-                <a href="https://play.google.com/store/apps/details?id=nic.goi.aarogyasetu&hl=en_IN" target="_blank"><i class="fab fa-android mr-3" style="font-size:40px"></i></a>
-                <a href="https://apps.apple.com/in/app/aarogyasetu/id1505825357" target="_blank"><i class="fab fa-apple" style="font-size:36px"></i></a>
-                <h1 style="color: orange;">DOWNLOAD AROGYA SETU APP</h1>
+                <div class="row">
+                  <div class="col">
+                    <img src="arogya.png" width="100" height="100">
+                  </div>
+                  <div class="col">
+                    <a href="https://play.google.com/store/apps/details?id=nic.goi.aarogyasetu&hl=en_IN" target="_blank"><i class="fab fa-android mr-3" style="font-size:40px"></i></a>
+                    <a href="https://apps.apple.com/in/app/aarogyasetu/id1505825357" target="_blank"><i class="fab fa-apple" style="font-size:36px"></i></a>
+                    <h3 style="color: white;">DOWNLOAD AROGYA SETU APP</h3>
+                  </div>
+                </div>
               </div>   
             </div>
-            <div class="carousel-item">
+            <div class="carousel-item" style="background-color: #FF6347;">
               <div class="carousel-caption mb-5">
                 <a href="https://forms.gle/Ws6FdpTTMwG9cWfC9" target="_blank"><i class="far fa-comment-alt" style="font-size: 48px;"></i></a>
-                <h3>Don't forget to give your valueable FeedBack after visiting <a href="#">this</a> Site.</h3>
+                <h3>Don't forget to give your valueable FeedBack after visiting <a href="#MyPage" style="color: white;;">this</a> Site.</h3>
               </div>   
             </div>
           </div>
@@ -367,8 +367,8 @@
     </div>
     <i class="fa fa-exclamation-triangle" aria-hidden="true" style="font-size: 38px;"></i><h3>Precautions</h3>
     <div class="row">
-      <div class="col">
-        <img src="stayathome.png" width="80" height="80"><br>
+      <div class="col p-3">
+       <i class="fa fa-home" style="font-size: 50px;"></i><br>
         Stay at <strong>HOME</strong>
       </div>
       <div class="col">
@@ -376,7 +376,7 @@
         Keep Safe <strong>DISTANCE</strong>
       </div>
       <div class="col">
-        <img src="washhands.png" width="80" height="80"><br>
+        <i class="fas fa-sign-language" style="font-size: 50px;"></i><br>
         Wash Your <strong>HANDS</strong> 
       </div>
     </div>
@@ -550,6 +550,9 @@ $(document).ready(function(){
         }
     });
   });
+})
+$(document).ready(function(){
+  $('#demo').carousel( { interval: 1600 });
 })
 </script>
 </html>
