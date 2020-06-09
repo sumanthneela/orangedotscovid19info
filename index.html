@@ -15,6 +15,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
   <style type="text/css">
     
     body{
@@ -209,6 +210,7 @@
         <p><strong>7,200</strong></p>
       </div>
     </div>
+    <div id="chartContainer" class=" mb-5" style="height: 300px; width: 100%;"></div>
     <h4><i class="fa fa-globe fa-lg"></i> World-Wide Cases</h4>
     <div class="row p-5">
       <div class="col-12 col-sm-4 slideanim" id="world">
@@ -1170,6 +1172,42 @@ $(document).ready(function(){
 })
 function myFunction(x) {
   x.classList.toggle("change");
+}
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+  exportEnabled: true,
+  animationEnabled: true,
+  title:{
+    text: "Recovery & Death Rate"
+  },
+  legend:{
+    cursor: "pointer",
+    itemclick: explodePie
+  },
+  data: [{
+    type: "pie",
+    showInLegend: true,
+    toolTipContent: "{name}: <strong>{y}%</strong>",
+    indexLabel: "{name} - {y}%",
+    dataPoints: [
+      { y: 2.8, name: "Death" },
+      { y: 48.4, name: "Recovery" },
+      { y: 48.7, name: "Active",exploded: true}
+    ]
+  }]
+});
+chart.render();
+}
+
+function explodePie (e) {
+  if(typeof (e.dataSeries.dataPoints[e.dataPointIndex].exploded) === "undefined" || !e.dataSeries.dataPoints[e.dataPointIndex].exploded) {
+    e.dataSeries.dataPoints[e.dataPointIndex].exploded = true;
+  } else {
+    e.dataSeries.dataPoints[e.dataPointIndex].exploded = false;
+  }
+  e.chart.render();
+
 }
 </script>
 </html>
