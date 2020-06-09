@@ -70,15 +70,37 @@
       -webkit-transform: translateY(0%);
     }
   }
+  .bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #fff;
+    opacity: 0.8;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+
+  .change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+
+  .change .bar2 {opacity: 0;}
+
+  .change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+  }
   </style>
 </head>
 <body id="MyPage" data-spy="scroll" data-target=".navbar" data-offset="60">
   <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
     <a class="navbar-brand" href="#"><img src="logo png.png" width="50" height="50"></a>
     <a class="navbar-brand" href="#" style="font-size: 30px">ORANGE DOTS</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <div class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" onclick="myFunction(this)">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="nav navbar-nav ml-auto">
         <li class="nav-item">
@@ -1142,5 +1164,8 @@ $(document).ready(function(){
 $(document).ready(function(){
   $('#demo').carousel( { interval: 1600 });
 })
+function myFunction(x) {
+  x.classList.toggle("change");
+}
 </script>
 </html>
